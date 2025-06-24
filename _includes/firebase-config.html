@@ -6,12 +6,13 @@
 <script>
 // Firebase configuration for the CodeBuddy project
 firebaseConfig = {
-    apiKey: "AIzaSyCaXF2KFWKE_U2jzq7euYmevmaokE508dw",
-    authDomain: "grey-codebuddy.firebaseapp.com",
-    projectId: "grey-codebuddy",
-    storageBucket: "grey-codebuddy.firebasestorage.app",
-    messagingSenderId: "825600697024",
-    appId: "1:825600697024:web:04859479cefdf7bb3c8325"
+        apiKey: "{{site.apiKey}}",
+        authDomain: "{{site.authDomain}}",
+        databaseURL: "{{site.databaseURL}}",
+        projectId: "{{site.projectId}}",
+        storageBucket: "{{site.storageBucket}}",
+        messagingSenderId: "{{site.senderId}}",
+        appId: "{{site.appId}}"
 };
 
   firebase.initializeApp(firebaseConfig);
