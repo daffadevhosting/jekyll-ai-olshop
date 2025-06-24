@@ -1,0 +1,178 @@
+---
+layout: default
+title: {{ page.title }}
+---
+
+<nav class="breadcrumb">
+  <a href="/">Beranda</a> /
+  <a href="/produk/">Produk</a> /
+  <span>{{ page.title }}</span>
+</nav>
+
+<article class="product-detail">
+  <div class="product-image">
+    <img id="produk-gambar" src="{{ page.image }}" alt="{{ page.title }}">
+  </div>
+  <div class="product-info">
+    <h1>{{ page.title }}</h1>
+
+    {% if page.categories %}
+      <p class="kategori">
+        {% for kategori in page.categories %}
+          <span class="badge">{{ kategori }}</span>
+        {% endfor %}
+      </p>
+    {% endif %}
+
+    {% if page.styles %}
+      <div class="warna-opsi">
+        <p>Pilihan Warna:</p>
+        <div id="warna-buttons">
+          {% for style in page.styles %}
+            <button class="warna-badge"
+                    data-src="{{ style.image_path }}"
+                    style="background-color: {{ style.color }}"
+                    title="{{ style.name }}"></button>
+          {% endfor %}
+        </div>
+      </div>
+    {% endif %}
+
+    <p class="price">
+      {% if page.discount %}
+        <span class="before">Rp{{ page.price }}</span>
+        <strong class="after">Rp{{ page.discount }}</strong>
+      {% else %}
+        <strong class="after">Rp{{ page.price }}</strong>
+      {% endif %}
+    </p>
+
+    <p class="stok">
+      Stok: <strong>{{ page.stok }}</strong>
+    </p>
+
+    {% if page.stok contains "Habis" %}
+      <button class="btn-beli" disabled>Stok Habis</button>
+    {% else %}
+      <button class="btn-beli"><i class="bi bi-cart-plus"></i> Beli Sekarang</button>
+    {% endif %}
+
+    <p class="deskripsi">
+      {{ page.content | markdownify }}
+    </p>
+
+    <div class="navigasi-produk">
+      {% assign sorted = site.pages | where: "layout", "product" | sort: "title" %}
+      {% assign index = 0 %}
+      {% for item in sorted %}
+        {% if item.url == page.url %}
+          {% assign index = forloop.index0 %}
+        {% endif %}
+      {% endfor %}
+      {% assign prev_index = index | minus: 1 %}
+      {% assign next_index = index | plus: 1 %}
+      {% assign prev = sorted[prev_index] %}
+      {% assign next = sorted[next_index] %}
+      <div class="nav-links">
+        {% if prev %}<a href="{{ prev.url }}">← {{ prev.title }}</a>{% endif %}
+        {% if next %}<a href="{{ next.url }}">{{ next.title }} →</a>{% endif %}
+      </div>
+    </div>
+  </div>
+</article>
+
+<style>
+.breadcrumb {
+  padding: 1rem 2rem;
+  font-size: 0.9rem;
+  background: #f2f2f2;
+}
+.breadcrumb a { color: #4CAF50; text-decoration: none; }
+.product-detail {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem;
+}
+.product-image img {
+  max-width: 300px;
+  border-radius: 10px;
+}
+.product-info {
+  flex: 1;
+}
+.price .before {
+  text-decoration: line-through;
+  color: #999;
+  margin-right: 0.5rem;
+}
+.price .after {
+  color: #e53935;
+  font-size: 1.2rem;
+}
+.btn-beli {
+  margin-top: 1rem;
+  background: #4CAF50;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.stok {
+  margin-top: 0.5rem;
+  color: #555;
+}
+.kategori .badge {
+  display: inline-block;
+  background: #e0f2f1;
+  color: #00796B;
+  padding: 0.2rem 0.6rem;
+  margin-right: 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+}
+.navigasi-produk {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+}
+.nav-links a {
+  margin-right: 1rem;
+  color: #4CAF50;
+  text-decoration: none;
+}
+.warna-badge {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  margin-right: 0.4rem;
+  cursor: pointer;
+}
+.warna-badge.active {
+  border-color: #4CAF50;
+  box-shadow: 0 0 0 2px white;
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const img = document.getElementById("produk-gambar");
+  const warnaButtons = document.querySelectorAll(".warna-badge");
+
+  warnaButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      warnaButtons.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      const newSrc = btn.getAttribute("data-src");
+      if (newSrc && img) {
+        img.setAttribute("src", newSrc);
+      }
+    });
+  });
+
+  if (warnaButtons.length) warnaButtons[0].click();
+});
+</script>

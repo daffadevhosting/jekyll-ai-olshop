@@ -1,0 +1,49 @@
+# Welcome to Jekyll!
+
+# Site settings
+title: AI olshop
+description: Chatbot e-commerce berbasis JavaScript yang dirancang untuk memberikan pengalaman belanja interaktif lewat chat.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://as-syariahbordir.github.io" # the base hostname & protocol for your site
+
+# Markdown settings
+markdown: kramdown
+
+collections:
+  products:
+    output: true
+    permalink: /product/:path/
+
+# Sass settings
+sass:
+  sass_dir: assets/sass
+  style: :compressed
+
+# Build settings
+exclude:
+  - package.json
+  - README.md
+  - CNAME
+  - assets/sass
+
+# Plugin settings
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - dotenv
+  - jekyll-seo-tag
+  - jekyll-paginate
+  - jekyll-redirect-from
+  - jekyll-archives
+
+plugins_dir: _plugins
+
+# Firebase
+api_key: "<%= ENV['api_key'] %>"
+auth_domain: "<%= ENV['auth_domain'] %>"
+project_id: "<%= ENV['project_id'] %>"
+database_url: "<%= ENV['database_url'] %>"
+storage_bucket: "<%= ENV['storage_bucket'] %>"
+sender_id: "<%= ENV['sender_id'] %>"
+app_id: "<%= ENV['app_id'] %>"
+measure_id: "<%= ENV['measure_id'] %>"

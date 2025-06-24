@@ -1,0 +1,28 @@
+<div id="chat-box" class="main"></div>
+<form id="chat-form" class="chat-input-container">
+  <textarea id="user-input" placeholder="Tulis pesan..." rows="2"></textarea>
+  <div class="chat-buttons">
+    <button type="button" id="mic-btn" class="chat-icon-btn" title="Mic">
+      <i class="bi bi-mic"></i>
+    </button>
+
+    <button type="submit" id="send-btn" class="chat-icon-btn" title="Kirim" style="display: none;">
+      <i class="bi bi-send"></i>
+    </button>
+  </div>
+</form>
+<script>
+  const textarea = document.getElementById("user-input");
+  textarea.addEventListener("input", () => {
+    textarea.style.height = "auto";
+    textarea.style.height = textarea.scrollHeight + "px";
+  });
+  window.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("chat-form");
+  setTimeout(() => {
+    form.classList.add("active");
+  }, 1800); // delay sedikit biar lebih dramatis
+});
+
+</script>
+

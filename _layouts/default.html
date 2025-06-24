@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: page.lang | default: 'id | ID' }}">
+
+  {% include head.html %}
+
+  <body>
+    <main class="main" aria-label="Content">
+
+<div id="auth-area">
+  <button id="login-btn" class="btn-auth">Login dengan Google</button>
+  <button id="logout-btn" class="btn-auth" style="display:none;">Logout</button>
+</div>
+
+      <article class="content">
+        {{ content }}
+      </article>
+      </main>
+
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      sidebar.classList.toggle('collapsed');
+      sidebar.classList.toggle('active'); // for mobile
+    }
+  </script>
+<script type="module" src="/assets/js/assya/assya-core.js"></script>
+<script>
+  function chatTo(text) {
+    document.querySelector('#user-input').value = text;
+    document.querySelector('#chat-form').dispatchEvent(new Event('submit'));
+  }
+</script>
+<script  src="/assets/js/scripts.js"></script>
+
+  </body>
+
+</html>

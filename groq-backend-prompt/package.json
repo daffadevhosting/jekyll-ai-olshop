@@ -1,0 +1,24 @@
+{
+  "name": "groq-backend-prompt",
+  "version": "1.0.0",
+  "description": "A backend prompt integration for the Groq API.",
+  "main": "src/prompt.js",
+  "scripts": {
+    "start": "node src/prompt.js",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "dependencies": {
+    "axios": "^0.21.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  },
+  "keywords": [
+    "groq",
+    "api",
+    "backend",
+    "prompt"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
+}
