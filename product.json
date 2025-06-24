@@ -8,7 +8,7 @@ permalink: /produk.json
     {% assign items = site.products | where: "layout", "product" %}
     {% for item in items %}
       {
-        "title": "{{ item.title | slugify }}",
+        "title": "{{ item.title}}",
         "slug": "{{ item.slug }}",
         "id": "{{ item.id }}",
         "category": "{{ item.category }}",
@@ -18,11 +18,12 @@ permalink: /produk.json
         "discount": "{{ item.discount }}",
         "stok": "{{ item.stok }}",
         "description": "{{ item.description | escape }}",
+        "narrative": "{{ item.narrative | newline_to_br | escape }}",
         "image": "{{ item.image }}",
         "styles": [
           {% for style in item.styles %}
             {
-              "name": "{{ style.name }}",
+              "name": "{{ style.name | strip | downcase }}",
               "color": "{{ style.color }}",
               "image_path": "{{ style.image_path }}"
             }{% unless forloop.last %},{% endunless %}

@@ -1,6 +1,6 @@
 ---
 layout: product
-slug: masker-bordir-tasikmalaya-motif-kucing
+slug: masker-bordir-tasik-motif-kucing
 title: Masker Bordir Kucing
 description: Masker bordir motif kucing, bahan premium katun
 categories: masker-bordir

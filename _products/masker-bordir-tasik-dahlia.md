@@ -1,6 +1,6 @@
 ---
 layout: product
-slug: masker-bordir-dahlia
+slug: masker-bordir-tasik-dahlia
 title: Masker Bordir Dahlia
 description: Masker kain bordir manual tasikmalaya murah meriah,
 categories: masker-bordir

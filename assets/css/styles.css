@@ -345,6 +345,14 @@ body {
 .chat-icon-btn:hover {
   background-color: #0056b3;
 }
+.assya.loading {
+  opacity: 1;
+  transition: opacity 0.4s ease;
+}
+
+.assya.loading.fade-out {
+  opacity: 0;
+}
 
 #chat-box.main {
   position: relative;

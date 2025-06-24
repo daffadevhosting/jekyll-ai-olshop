@@ -1,27 +1,33 @@
-// intents/addToCart.js
-export default async function addToCart(userInput) {
-  const slug = extractSlug(userInput); // misal dari "tambah masker-3d-bordir"
-  const res = await fetch("/produk.json");
-  const data = await res.json();
-  const produk = data.produk || [];
-  const item = produk.find(p => p.slug === slug);
+import { context } from "../context.js";
 
-  if (!item) {
-    return { type: "text", text: `Produk "${slug}" tidak ditemukan.` };
+export default async function addToCart() {
+  const keranjang = JSON.parse(localStorage.getItem("keranjang")) || [];
+
+  if (!context.slug) {
+    return {
+      type: "text",
+      text: "Produk belum dipilih dengan jelas. Coba sebutkan nama produknya dulu ya."
+    };
   }
 
-  // Simpan keranjang ke localStorage
-  const cart = JSON.parse(localStorage.getItem("keranjang")) || [];
-  cart.push({ slug: item.slug, qty: 1 });
-  localStorage.setItem("keranjang", JSON.stringify(cart));
+    if (context.stok === "0" || context.stok === 0) {
+    return {
+        type: "text",
+        text: `⚠️ Maaf, stok untuk produk ini sedang habis. Kamu bisa pilih produk lain dulu, ya.`
+    };
+    }
+
+  keranjang.push({
+    slug: context.slug,
+    warna: context.warna || "-",
+    ukuran: context.ukuran || "-",
+    qty: context.qty || 1
+  });
+
+  localStorage.setItem("keranjang", JSON.stringify(keranjang));
 
   return {
     type: "text",
-    text: `✅ "${item.title}" telah ditambahkan ke keranjang.`
+    text: `🛒 Produk berhasil dimasukkan ke keranjang!\n- Produk: ${context.slug}\n- Warna: ${context.warna || "-"}\n- Ukuran: ${context.ukuran || "-"}\n- Jumlah: ${context.qty || 1}`
   };
-}
-
-function extractSlug(input) {
-  const words = input.toLowerCase().split(" ");
-  return words.find(word => word.includes("-")) || words.pop();
 }

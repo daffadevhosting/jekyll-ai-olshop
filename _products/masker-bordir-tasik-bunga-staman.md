@@ -1,6 +1,6 @@
 ---
 layout: product
-slug: masker-bordir-setaman
+slug: masker-bordir-tasik-bunga-staman
 title: Masker Bordir Setaman
 description: Bahan kain 100% Katun dengan 3 lapisan,
 categories: masker-bordir

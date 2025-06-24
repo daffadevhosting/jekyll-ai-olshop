@@ -1,6 +1,6 @@
 ---
 layout: product
-slug: masker-bordir-ilalang
+slug: masker-bordir-tasik-ilalang
 title: Masker Bordir Ilalang
 description: Masker Kain Bordir Bunga. -Bahan kain 100% Katun dengan 3 lapisan.
 categories: masker-bordir

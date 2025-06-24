@@ -1,6 +1,6 @@
 ---
 layout: product
-slug: masker-3d-bordir
+slug: masker-bordir-tasik-3d
 title: Masker 3D Bordir
 description: Masker3D Bordir, 3Lapisan kain,
 categories: masker-bordir

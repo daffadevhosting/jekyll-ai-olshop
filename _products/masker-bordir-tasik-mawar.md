@@ -1,6 +1,6 @@
 ---
 layout: product
-slug: masker-bordir-tasikmalaya-mawar
+slug: masker-bordir-tasik-mawar
 title: Masker Bordir Mawar
 description: Masker kain Bordir dengan bahan kain 100% katun 3 lapisan
 categories: masker-bordir

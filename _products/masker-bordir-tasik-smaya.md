@@ -1,6 +1,6 @@
 ---
 layout: product
-slug: masker-bordir-smaya
+slug: masker-bordir-tasik-smaya
 title: Masker Bordir sMaya
 description: Bahan Kain Katun, 3 lapis,
 categories: masker-bordir

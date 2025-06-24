@@ -39,11 +39,11 @@
 
 | Fase | Fitur                                               | Status     |
 |------|-----------------------------------------------------|------------|
-| 🟢 v1 | Bubble katalog dinamis, detail produk via slug     | ✅ Selesai  |
-| 🟡 v2 | Intent `addToCart()`, keranjang, wizard warna       | 🔄 On Dev   |
-| ⚪ v3 | Checkout UI, form pengiriman, input alamat          | ⏳ Planned  |
-| ⚪ v4 | Voice input, web speech API                         | ⏳ Planned  |
-| ⚪ v5 | Smart context, intent memory                        | ⏳ Planned  |
+| 🟢 v1 | Bubble katalog dinamis, detail produk via slug     | ✅ Selesai |
+| 🟢 v2 | Intent `addToCart()`, keranjang, wizard warna      | ✅ Selesai |
+| 🟡 v3 | Checkout UI, form pengiriman, input alamat         | 🔄 On Dev  |
+| ⚪ v4 | Voice input, web speech API                        | ⏳ Planned |
+| ⚪ v5 | Smart context, intent memory                       | ⏳ Planned |
 
 ## 🚀 Jalankan Lokal
 

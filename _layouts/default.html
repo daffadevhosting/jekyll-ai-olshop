@@ -23,14 +23,16 @@
       sidebar.classList.toggle('active'); // for mobile
     }
   </script>
+
 <script type="module" src="/assets/js/assya/assya-core.js"></script>
 <script>
   function chatTo(text) {
     document.querySelector('#user-input').value = text;
     document.querySelector('#chat-form').dispatchEvent(new Event('submit'));
   }
+  
+  localStorage.setItem("produkTerakhir", "${match.slug}");
 </script>
-<script  src="/assets/js/scripts.js"></script>
 
   </body>
 

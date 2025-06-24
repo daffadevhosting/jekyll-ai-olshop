@@ -1,6 +1,6 @@
 ---
 layout: product
-slug: masker-bordir-rosee
+slug: masker-bordir-tasik-rosse
 title: Masker Bordir Rosse
 description: Masker Kain Bordir Bunga rosse. -Bahan kain 100% Katun premium
 categories: masker-bordir
