@@ -16,6 +16,8 @@ export function incrementUsage() {
 }
 
 export function checkLimit() {
+  if (location.hostname === "localhost") return true; // 👈 bypass total di local
+
   const { status, used } = getUserStatus();
 
   if (status === "premium") return true;
@@ -24,6 +26,14 @@ export function checkLimit() {
 
   return false;
 }
+// Reset usage and status for testing purposes
+// Hapus ini setelah selesai testing
+localStorage.removeItem("chat_used");
+localStorage.removeItem("user_status");
+// Gunakan ini untuk mengatur status pengguna
+// Hapus atau ganti sesuai kebutuhan
+// Ini hanya untuk testing, jangan gunakan di production
+// Misalnya, untuk mengatur status pengguna ke "anon", "free", atau "premium
 localStorage.setItem("user_status", "anon");    // default
 localStorage.setItem("user_status", "free");    // login Google
 localStorage.setItem("user_status", "premium"); // premium plan

@@ -14,7 +14,7 @@ export default function classifyIntent(text) {
   if (input.includes("tambah") || input.includes("keranjang")) return "addToCart";
   if (input.includes("produk") || input.includes("katalog")) return "katalog";
   if (input.includes("detail") || input.includes("lihat") || input.includes("info")) return "produkDetail";
-  if (input.includes("halo") || input.includes("hai") || input.includes("assya")) return "greeting";
+  if (input.includes("halo") || input.includes("hallo") || input.includes("hai") || input.includes("assya") || input.includes("apa kabar")) return "greeting";
   if (input.includes("bantuan") || input.includes("help")) return "help";
   if (input.includes("ukuran") || input.includes("size")) return "ukuranProduk";  
   if (input.includes("s") || input.includes("m") || input.includes("l") || input.includes("xl") || input.includes("all size") || input.includes("one size")) return "ukuranProduk"; 
@@ -25,6 +25,18 @@ export default function classifyIntent(text) {
   if (input.includes("lanjut") || input.includes("ya") || input.includes("iya")) return "lanjut";
   if (input.includes("tidak") || input.includes("nggak") || input.includes("gak") || input.includes("ga")) return "tidak";
   if (input.includes("katalog") || input.includes("produk") || input.includes("koleksi")) return "katalog";
+  if (input.includes("keranjang") || input.includes("belanja")) return "keranjang";
+  rekomendasi: [
+  "rekomendasi",
+  "yang bagus",
+  "mau yang bagus",
+  "saran produk",
+  "masker paling cantik",
+  "paling laris",
+  "rekom dong"
+  ]
+  if (input.includes("rekomendasi") || input.includes("yang bagus") || input.includes("saran produk")) return "rekomendasi";
+  if (input.includes("lanjut bayar") || input.includes("konfirmasi pesanan") || input.includes("lanjut checkout") || input.includes("bayar sekarang")) return "checkout"; 
   const lower = text.toLowerCase();
   for (const intent in INTENT_KEYWORDS) {
     const patterns = INTENT_KEYWORDS[intent];

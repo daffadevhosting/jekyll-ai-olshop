@@ -1,0 +1,17 @@
+<header class="flex items-center top-0 left-0 right-0 w-100vw bg-blue-700 justify-between text-white px-4 py-2 shadow sticky top-0 z-30">
+  <div class="flex items-center">
+    <div class="flex items-center">
+      <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center mr-2">
+        <i class="bi bi-chat"></i>
+      </div>
+      <div>
+        <h1 class="text-lg font-semibold">  {{site.title}}</h1>
+        <p class="text-sm text-blue-100">{{site.shortdesc}} ✨</p>
+      </div>
+    </div>
+  </div>
+    <div id="auth-area">
+      <button id="login-btn" class="btn-auth top-6 right-4 bg-blue-600 text-white px-4 py-2 text-sm rounded shadow-lg z-50">Login dengan Google</button>
+      <button id="logout-btn" class="btn-auth top-6 right-4 bg-red-600 text-white px-4 py-2 text-sm rounded shadow-lg z-50" style="display:none;">Logout</button>
+    </div>
+</header>

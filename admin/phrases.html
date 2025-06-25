@@ -1,0 +1,32 @@
+<!-- 📁 /admin/phrases.html -->
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Kalimat Tidak Dipahami - Assya Logs</title>
+  <style>
+    body { font-family: sans-serif; padding: 2rem; }
+    li { margin-bottom: 0.5rem; }
+    .badge { background: #eee; padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.8rem; }
+  </style>
+</head>
+<body>
+  <h2>🧠 Kalimat yang Tidak Dipahami oleh Assya</h2>
+  <ul id="list"></ul>
+
+  <script>
+    const list = JSON.parse(localStorage.getItem("unknown_phrases")) || [];
+    const container = document.getElementById("list");
+
+    if (list.length === 0) {
+      container.innerHTML = '<li><i>Tidak ada data fallback saat ini.</i></li>';
+    } else {
+      list.forEach((text, i) => {
+        const li = document.createElement("li");
+        li.innerHTML = `<span class='badge'>${i+1}</span> ${text}`;
+        container.appendChild(li);
+      });
+    }
+  </script>
+</body>
+</html>

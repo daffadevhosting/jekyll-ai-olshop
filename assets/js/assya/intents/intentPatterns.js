@@ -14,6 +14,14 @@ export const INTENT_KEYWORDS = {
   "bayar sekarang",
   "lanjut checkout",
   "konfirmasi"
+],
+rekomendasi: ["rekomendasi", "yang bagus", "apa yang paling laris", "saran produk", "mau yang cantik"],
+konfirmasiBayar: [
+  "konfirmasi bayar",
+  "bayar sekarang",
+  "selesaikan transaksi",
+  "konfirmasi pembelian",
+  "lanjutkan pembayaran"
 ]
 
 };
@@ -24,5 +32,6 @@ export const INTENT_PATTERNS = {
   greeting: new RegExp(`\\b(${INTENT_KEYWORDS.greeting.join("|")})\\b`, "i"),
   help: new RegExp(`\\b(${INTENT_KEYWORDS.help.join("|")})\\b`, "i"),
   keranjang: new RegExp(`\\b(${INTENT_KEYWORDS.keranjang.join("|")})\\b`, "i"),
-  checkout: new RegExp(`\\b(${INTENT_KEYWORDS.checkout.join("|")})\\b`, "i")
+  checkout: new RegExp(`\\b(${INTENT_KEYWORDS.checkout.join("|")})\\b`, "i"),
+  rekomendasi: new RegExp(`\\b(${INTENT_KEYWORDS.rekomendasi.join("|")})\\b`, "i")
 };

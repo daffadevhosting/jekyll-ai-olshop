@@ -27,11 +27,16 @@ export default async function katalog() {
       `;
     }).join("");
 
-    return {
-      type: "html",
-      content: `<div class="chat-bubble assya-katalog w-full"><div class="grid grid-cols-1 md:grid-cols-3 gap-3">${cards}</div></div>`
-    };
-
+return {
+  type: "html",
+  content: `
+    <div class="assya-katalog w-full -mx-4 sm:mx-0">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+        ${cards}
+      </div>
+    </div>
+  `
+};
   } catch (err) {
     console.error("Gagal render katalog:", err);
     return {
