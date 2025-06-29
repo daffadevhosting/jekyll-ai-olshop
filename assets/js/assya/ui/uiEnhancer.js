@@ -13,12 +13,12 @@ export function updateBadgeQty() {
 export function setupQuickSidebar() {
   const sidebarToggle = document.createElement("button");
   sidebarToggle.id = "sidebarToggle";
-  sidebarToggle.className = "fixed bottom-4 left-4 sm:hidden z-50 bg-blue-700 text-white p-2 rounded-full shadow";
-  sidebarToggle.innerHTML = "☰";
+  sidebarToggle.className = "fixed bottom-4 left-4 sm:hidden z-50 w-10 h-10 bg-blue-700 text-white p-2 rounded-full shadow";
+  sidebarToggle.innerHTML = '<i class="bi bi-list"></i>';
 
   const sidebar = document.createElement("div");
   sidebar.id = "quickSidebar";
-  sidebar.className = "hidden sm:flex flex-col gap-2 fixed top-1/2 right-0 transform -translate-y-1/2 bg-white/90 backdrop-blur px-3 py-4 rounded-l-xl shadow-lg z-40";
+  sidebar.className = "hidden flex sm:flex flex-col gap-3 md:gap-2 fixed top-1/2 right-0 transform -translate-y-1/2 bg-white/90 backdrop-blur px-3 py-4 rounded-l-xl shadow-lg z-40";
 
   const buttons = [
     { label: "<i class=\"bi bi-grid-3x3\"></i>", cmd: "katalog", color: "bg-blue-600" },

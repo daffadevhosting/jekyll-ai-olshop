@@ -45,17 +45,21 @@ export async function handleRequest({prompt, chatBox, renderReply}) {
       <span class="text-xs px-2 py-1 bg-gray-100 border rounded" style="background-color: ${s.color}">${s.name}</span>
     `).join(" ");
     const detailHTML = `
-      <div class="text-sm">
+      <div class="assya-singleProduk rounded overflow-hidden text-sm">
+        <div class="w-full bg-white mx-auto">
         <img src="${product.image}" alt="${product.title}" class="w-full max-h-48 object-cover rounded mb-2"/>
-        <h2 class="font-bold text-base mb-1">${product.title}</h2>
+        <div class="px-2">
+        <h2 class="font-bold text-gray-600 text-base mb-1">${product.title}</h2>
         <p class="text-gray-600 mb-1">${product.description}</p>
         <p class="text-sm text-green-600 font-semibold mb-1">Harga: Rp ${product.discount || product.price}</p>
-        <p class="text-sm">Stok: ${product.stok}</p>
-        <div class="my-2">
+        <p class="text-sm text-red-600">Stok: ${product.stok}</p>
+        <div class="my-2" style="line-height: 30px;">
           <p class="mb-1">Varian warna tersedia:</p>
           ${styleList || '<span class="text-xs">-</span>'}
         </div>
         <p class="text-xs text-gray-500 italic">Ketik misalnya: "Saya mau 1 warna merah"</p>
+        </div>
+        </div>
       </div>
     `;
     return renderReply({ type: "html", content: detailHTML }, chatBox);

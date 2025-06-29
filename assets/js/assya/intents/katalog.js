@@ -16,7 +16,7 @@ export default async function katalog() {
 
       return `
         <div class="border p-2 rounded shadow bg-white flex flex-col">
-          <img src="${p.image}" alt="${p.title}" class="w-full h-28 object-cover mb-2 rounded" />
+          <img src="${p.image}" alt="${p.title}" class="w-full h-58 object-cover mb-2 rounded" />
           <h3 class="font-semibold text-gray-500 text-sm mb-1">${p.title}</h3>
           <p class="text-xs text-gray-600 flex-grow">${p.description}</p>
           <div class="text-green-600 font-bold text-sm mt-2">Rp${p.price}</div>
@@ -30,7 +30,7 @@ export default async function katalog() {
 return {
   type: "html",
   content: `
-    <div class="assya-katalog w-full -mx-4 sm:mx-0">
+    <div class="assya-katalog w-full -mx-auto sm:mx-0">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
         ${cards}
       </div>

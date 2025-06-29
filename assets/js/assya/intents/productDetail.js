@@ -57,6 +57,7 @@ export default async function productDetail(userInput = "") {
       type: "html",
       content: `
         <div class="text-sm leading-normal">
+          <div class="w-full mx-auto">
           <img src="${match.image}" class="w-full rounded mb-2" />
           ${story}
           ${variants ? `<div class="grid grid-cols-2 gap-2 mt-2">${variants}</div>` : ""}
@@ -64,6 +65,7 @@ export default async function productDetail(userInput = "") {
             <a href="${match.url}" target="_blank" class="inline-block bg-blue-600 text-white px-4 py-1.5 text-xs rounded hover:bg-blue-700 transition">
               🔗 Lihat Produk di Website
             </a>
+          </div>
           </div>
         </div>
       `
